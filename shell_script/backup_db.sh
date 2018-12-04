@@ -1,5 +1,9 @@
 #!/bin/bash
-
+login_file=/root/secret/mylogin.cnf
+backup_file=/root/db/db_backup-$(date +%m%d%Y%H%M).sql.gz
+db_folder=1XWkVQn8Qxj8m5Ojfv1CkjG0W4rE5Gd08
 echo "Backuping database..."
-/usr/bin/mysqldump --defaults-extra-file=/root/secret/mylogin.cnf -u root --single-transaction --quick --lock-tables=false 1perfectchoice | gzip > /root/db/db_backup-$(date +%m%d%Y%H%M).sql.gz
+/usr/bin/mysqldump --defaults-extra-file=$login_file -u root --single-transaction --quick --lock-tables=false 1perfectchoice | gzip > $backup_file
+echo "Uploading to Google Drive..."
+/usr/local/bin/gdrive upload -p $db_folder $backup_file
 echo "Done"
