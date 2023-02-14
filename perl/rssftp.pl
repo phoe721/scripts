@@ -16,7 +16,7 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 #########i#########i#########i####################################################
 
 # Get program settings
-$config_file = "/root/scripts/rssftp.conf";
+$config_file = "/home/aaron/scripts/perl/rssftp.conf";
 if (-e $config_file) {
 	%cfg = ();
 	%cfg = &fill_ini($config_file);
@@ -45,7 +45,7 @@ if (-e $config_file) {
 }
 
 # Get ftp server list
-$config_file2 = "/home/logs/rssftp/rssftpserver.conf";
+$config_file2 = "/home/aaron/scripts/perl/rssftpserver.conf";
 if (-e $config_file2) {
 	%cfg2 = ();
 	%cfg2 = &fill_ini($config_file2);

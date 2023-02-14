@@ -9,7 +9,7 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 ##################################################################################
 # Initialization
 ##################################################################################
-$config_file = "/root/scripts/rssftp.conf";
+$config_file = "/home/aaron/scripts/perl/rssftp.conf";
 %cfg = ();
 %cfg = &fill_ini($config_file);
 $program_name = $cfg{runtime}->{program_name};
@@ -26,7 +26,7 @@ $monitor_name = $cfg{runtime}->{monitor_name};
 $uselog = $cfg{runtime}->{uselog};
 $log_level = $cfg{runtime}->{log_level};
 
-$config_file2 = "/home/logs/rssftp/rssftpserver.conf";
+$config_file2 = "/home/aaron/scripts/perl/rssftpserver.conf";
 %cfg2 = ();
 %cfg2 = &fill_ini($config_file2);
 $mtime2 = $cfg2{modified_time}->{mtime};
